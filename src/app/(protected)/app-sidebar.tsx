@@ -1,6 +1,12 @@
 "use client";
 
-import { Bot, CreditCard, LayoutDashboard, Plus, Presentation } from "lucide-react";
+import {
+  Bot,
+  CreditCard,
+  LayoutDashboard,
+  Plus,
+  Presentation,
+} from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -11,9 +17,11 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar,
 } from "@/components/ui/sidebar";
 
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
@@ -52,10 +60,20 @@ const projects = [
 
 export function AppSidebar() {
   const pathname = usePathname();
+  const { open } = useSidebar(); //this is a util function given by shadcn
 
   return (
     <Sidebar collapsible="icon" variant="floating">
-      <SidebarHeader>Logo</SidebarHeader>
+      <SidebarHeader>
+        <div className="flex items-center gap-2">
+          <Image src={"/logo.svg"} alt="logo" width={40} height={40} />
+
+          {/* only when the sidebar is open -> display logo */}
+          {open && (
+            <h1 className="text-xl font-bold text-primary/80">GitIntel</h1>
+          )}
+        </div>
+      </SidebarHeader>
 
       <SidebarContent>
         {/* Sidebar Group 1 */}
@@ -71,7 +89,7 @@ export function AppSidebar() {
                         href={item.url}
                         className={cn(
                           {
-                            "bg-primary !text-white hover:bg-black":
+                            "bg-primary text-white hover:bg-primary":
                               pathname === item.url,
                           },
                           "list-none",
@@ -115,14 +133,17 @@ export function AppSidebar() {
                 );
               })}
               <div className="h-2"></div>
-              <SidebarMenuItem>
-                <Link href='/create'>
-                  <Button size='sm' variant={"outline"} className="w-fit">
-                    <Plus />
-                    Create Project
-                  </Button>
-                </Link>
-              </SidebarMenuItem>
+
+              {open && (
+                <SidebarMenuItem>
+                  <Link href="/create">
+                    <Button size="sm" variant={"outline"} className="w-fit">
+                      <Plus />
+                      Create Project
+                    </Button>
+                  </Link>
+                </SidebarMenuItem>
+              )}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
