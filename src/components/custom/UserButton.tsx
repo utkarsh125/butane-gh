@@ -52,7 +52,7 @@ const UserButton = () => {
         <DropdownMenuContent
           side="bottom"
           sideOffset={8}
-          className="z-50 bg-black text-white"
+          className="z-50"
           align="end"
         >
           <DropdownMenuItem

@@ -1,25 +1,17 @@
-"use client";
+'use client'
 
-import React from "react";
-import { useSession } from "next-auth/react";
+import React from 'react'
+import { useSession } from 'next-auth/react';
 
 const DashboardPage = () => {
-  const { data: session, status } = useSession();
-
-  if (status === "loading") {
-    return <div>Loading...</div>;
-  }
-
-  if (!session) {
-    return <div>You must be logged in to view this page.</div>;
-  }
-
+  const { data: session } = useSession();
   return (
     <div>
-      <h1>Dashboard</h1>
-      <p>Welcome, {session.user?.name ?? "User"}!</p>
+        <div>
+            {session?.user?.name}
+        </div>
     </div>
-  );
-};
+  )
+}
 
-export default DashboardPage;
+export default DashboardPage
