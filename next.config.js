@@ -8,7 +8,10 @@ import "./src/env.js";
 const config = {
 
     images: {
-        domains: ["avatars.githubusercontent.com"]
+        domains: [
+            "avatars.githubusercontent.com",
+            "images.unsplash.com"
+        ]
     }
 };
 
