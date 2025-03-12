@@ -47,9 +47,9 @@ model VerificationToken {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   // NextAuth fields
   name          String?
@@ -57,12 +57,38 @@ model User {
   emailVerified DateTime?
   image         String?
 
-  firstName     String?
-  lastName      String?
-  credits       Int       @default(150)
+  firstName String?
+  lastName  String?
+  credits   Int     @default(150)
+  userToProject UserToProject[]
 
   // Relations for NextAuth
-  accounts      Account[]
-  sessions      Session[]
+  accounts Account[]
+  sessions Session[]
+}
 
+model Project {
+  id    String      @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  name      String
+  githubUrl String
+
+  deletedAt DateTime?
+
+  userToProjects UserToProject[]
+}
+
+
+model UserToProject {
+  id         String   @id @default(cuid())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  userId     String
+  projectId  String
+
+  user       User     @relation(fields: [userId], references: [id])
+  project    Project  @relation(fields: [projectId], references: [id])
 }
