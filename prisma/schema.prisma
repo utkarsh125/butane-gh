@@ -3,11 +3,13 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  extensions = [vector]
 }
 
 // Necessary for NextAuth
@@ -77,8 +79,9 @@ model Project {
 
   deletedAt DateTime?
 
-  userToProjects UserToProject[]
-  Commit         Commit[]
+  userToProjects      UserToProject[]
+  Commit              Commit[]
+  SourceCodeEmbedding SourceCodeEmbedding[]
 }
 
 model UserToProject {
@@ -93,6 +96,18 @@ model UserToProject {
   project Project @relation(fields: [projectId], references: [id])
 }
 
+model SourceCodeEmbedding {
+  id String @id @default(cuid())
+
+  summaryEmbedding Unsupported("vector(768)")? //particularly using 768 (gemini)
+  sourceCode       String
+  fileName         String
+  summary          String
+
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id])
+}
+
 model Commit {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
@@ -101,11 +116,11 @@ model Commit {
   projectId String
   project   Project @relation(fields: [projectId], references: [id])
 
-  commitMessage String  
-  commitHash  String 
-  commitAuthorName  String
-  commitAuthorAvatar  String
-  commitDate  DateTime
+  commitMessage      String
+  commitHash         String
+  commitAuthorName   String
+  commitAuthorAvatar String
+  commitDate         DateTime
   //ai summary
-  summary String 
+  summary            String
 }

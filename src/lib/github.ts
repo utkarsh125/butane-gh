@@ -138,4 +138,4 @@ async function filterUnprocessedCommits(projectId: string, commitHashes: Respons
     return unprocessedCommits;
 }
 
-await pollCommits('cm87b26jy0000djvidoa4mmkq').then(console.log)
+// await pollCommits('cm87b26jy0000djvidoa4mmkq').then(console.log) 
