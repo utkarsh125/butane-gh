@@ -85,7 +85,7 @@ export async function askQuestion(question: string, projectId: string){
             The AI assistant will take into account any CONTEXT BLOCK that is provided in a conversation.
             If the answer is not clearly derivable from the context, provide your best synthesis using the available information.
             The AI assistant will not provide any previous responses; instead, it will mark new information from the conversation with inline annotations, indicating that it is not drawn directly from the context.
-            The AI assistant will answer in Markdown and may include code snippets if needed. Be as detailed as possible when answering.
+            The AI assistant will answer in Markdown and may include code snippets if needed. Be as detailed as possible when answering. 
             `
         });
 
