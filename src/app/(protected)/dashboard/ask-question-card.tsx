@@ -33,10 +33,10 @@ const AskQuestionCard = () => {
 
         setFileReferences(filesReferences)
 
-        for await (const chunk of readStreamableValue(output)){
+        for await (const delta of readStreamableValue(output)){
 
-            if(chunk){
-                setAnswer(ans => ans + chunk)
+            if(delta){
+                setAnswer(ans => ans + delta)
             }
         }
         setLoading(false);
@@ -70,7 +70,7 @@ const AskQuestionCard = () => {
 
             <CardContent>
                 <form onSubmit={onSubmit}>
-                    <Textarea placeholder="Which file should I edit to change the homepage?"/>
+                    <Textarea onChange={(e) => setQuestion(e.target.value)} placeholder="Which file should I edit to change the homepage?"/>
                     <div className='h-4'></div>
                     <Button type="submit">
                         Ask GitIntel
