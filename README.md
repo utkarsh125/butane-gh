@@ -1,29 +1,71 @@
-# Create T3 App
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## 🚀 Git Intel
 
-## What's next? How do I make an app with this?
+Git Intel is an advanced intelligence platform that provides deep insights into GitHub organizations and repositories. It leverages AI-driven analytics to assess authority levels, track project involvement, and summarize key discussions using state-of-the-art machine learning models.
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+---
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## 🏗 Tech Stack
 
-## Learn More
+**Git Intel** is built using the T3 Stack, which includes:
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+**Next.js 15** - Server-side rendering and frontend framework
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+**TypeScript** - Strongly-typed language for reliability
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+**tRPC** - End-to-end type-safe API communication
 
-## How do I deploy this?
+**Prisma** - ORM for database interactions
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+**TailwindCSS** - Utility-first CSS framework for rapid UI development
+
+**ShadCN** - Modern UI components built on Radix and Tailwind
+
+
+## Additional technologies used:
+
+**NeonDB** - Serverless Postgres database (also used for vector storage)
+
+**GitHub OAuth** - Authentication provider for user login and permissions
+
+**Gemini AI (via API)** - Used for Retrieval-Augmented Generation (RAG) insights
+
+**Gemini Embeddings (768 dimensions)** - To power search and AI-driven analytics
+
+**AssemblyAI** - Automated meeting note generation and summarization
+
+
+
+---
+
+## 🌟 Features
+
+- **GitHub Organization Insights** - Determine the authority level of users and analyze team structures.
+
+- **Project Tracking** - Identify key contributors and active repositories.
+
+- **RAG-Powered AI Queries** - Leverage Gemini AI for intelligent query responses based on GitHub data.
+
+- Vector Search - Store and retrieve embeddings efficiently using Neon.tech’s vector capabilities.
+
+- **Automated Meeting Summaries** - Use AssemblyAI to transcribe and summarize discussions.
+**Modern UI** - Built with ShadCN for a sleek and responsive experience.
+
+---
+
+## 📌 Contributing
+
+Contributions are welcome! Feel free to submit a pull request or open an issue.
+
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+💡 Git Intel – Empowering developers with AI-driven GitHub intelligence.
+
