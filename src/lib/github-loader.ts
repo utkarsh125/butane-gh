@@ -51,7 +51,7 @@ export const indexGithubRepo = async (projectId: string, githubUrl: string, gith
 
         const sourceCodeEmbedding = await db.sourceCodeEmbedding.create({
             data: {
-                summary: embedding.summary,
+                summary: embedding.summary || '',
                 sourceCode: embedding.sourceCode,
                 fileName: embedding.fileName,
                 projectId
@@ -72,7 +72,7 @@ const generateEmbeddings = async(docs: Document[]) => {
         console.log("Logging Summary: ",summary);
 
         console.log("DocPageContent: ", doc.pageContent);
-        const embedding = await generateEmbedding(summary);
+        const embedding = await generateEmbedding(summary || '');
 
         return {
             summary,
