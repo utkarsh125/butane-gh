@@ -2,12 +2,21 @@ import { AppSidebar } from './app-sidebar'
 import React from 'react'
 import { SidebarProvider } from '@/components/ui/sidebar'
 import UserButton from '@/components/custom/UserButton'
+import { auth } from '@/server/auth'
 
 type Props = {
     children: React.ReactNode
 }
 
-const layout = ({ children } : Props) => {
+const layout = async ({ children } : Props) => {
+
+    const session = await auth()
+
+    if(!session){
+        return<div>
+            You are not logged in.
+        </div>
+    }
   return (
     <SidebarProvider>
         {/* AppSidebar */}

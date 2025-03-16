@@ -57,7 +57,7 @@ const UserButton = () => {
         >
           <DropdownMenuItem
             className="cursor-pointer"
-            onSelect={() => signOut()}
+            onSelect={() => signOut({ redirectTo: "/"})}
           >
             <p className="text-red-500">Logout</p>
           </DropdownMenuItem>

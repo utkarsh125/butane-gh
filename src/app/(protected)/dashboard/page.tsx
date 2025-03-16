@@ -16,7 +16,7 @@ const DashboardPage = () => {
   const { project } = useProjects();
   return (
     <div>
-      {project?.id}
+      {/* {project?.id} */}
       <div className='flex items-center justify-between flex-wrap gap-y-4'>
         {/* github link */}
         <div className='flex items-center w-fit rounded-md bg-primary px-4 py-3'>
