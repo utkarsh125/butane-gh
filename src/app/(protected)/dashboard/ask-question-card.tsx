@@ -19,6 +19,7 @@ import { askQuestion } from "./action";
 import { readStreamableValue } from "ai/rsc";
 import { toast } from "sonner";
 import { useProjects } from "@/hooks/use-project";
+import useRefetch from "@/hooks/use-refetch";
 
 type FileReference = {
   fileName: string;
@@ -59,6 +60,8 @@ const AskQuestionCard = () => {
     setLoading(false);
   };
 
+  const refetch = useRefetch()
+
   return (
     <>
       <Dialog open={open} onOpenChange={setOpen}>
@@ -86,6 +89,8 @@ const AskQuestionCard = () => {
                     {
                       onSuccess: () => {
                         toast.success("Answer saved!");
+                        //refetch after save
+                        refetch()
                       },
                       onError: () => {
                         toast.error("Failed to save answer");
