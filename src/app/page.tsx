@@ -107,7 +107,7 @@ export default function LandingPage() {
                 </Button>
               </Link>
             </div>
-            <div className="mt-8">
+            <div className="mt-8 shadow-2xl">
               <div className="relative pt-[56.25%] w-full rounded-lg overflow-hidden shadow-lg">
                 <iframe 
                   src="https://www.youtube.com/embed/eZHtBzoMgaE" 
