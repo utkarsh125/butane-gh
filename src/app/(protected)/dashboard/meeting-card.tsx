@@ -56,7 +56,7 @@ const MeetingCard = () => {
                     toast.success("Meet upload failed")
                 }
             })
-            window.alert(downloadURL)
+            // window.alert(downloadURL)
             setIsUploading(false)
         }
     })

@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 
 import IssuesList from './issues-list'
 import React from 'react'

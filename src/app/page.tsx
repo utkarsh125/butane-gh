@@ -57,7 +57,9 @@ export default function LandingPage() {
 
           {/* Desktop Sign In */}
           <div className="hidden md:block">
-            <Button>Sign In</Button>
+            <Link href="/sign-in">
+              <Button>Sign In</Button>
+            </Link>
           </div>
         </nav>
         {/* Mobile Navigation Menu */}
@@ -78,7 +80,9 @@ export default function LandingPage() {
               >
                 How It Works
               </Link>
-              <Button onClick={() => setMobileMenuOpen(false)}>Sign In</Button>
+              <Link href="/sign-in" onClick={() => setMobileMenuOpen(false)}>
+                <Button>Sign In</Button>
+              </Link>
             </nav>
           </div>
         )}
@@ -96,10 +100,23 @@ export default function LandingPage() {
               GitIntel provides comprehensive analytics and insights for your repositories and organizations, helping you make data-driven decisions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="outline" className="gap-2">
-                <Github className="h-5 w-5" />
-                Connect GitHub
-              </Button>
+              <Link href="/sign-in">
+                <Button size="lg" variant="outline" className="gap-2">
+                  <Github className="h-5 w-5" />
+                  Connect GitHub
+                </Button>
+              </Link>
+            </div>
+            <div className="mt-8">
+              <div className="relative pt-[56.25%] w-full rounded-lg overflow-hidden shadow-lg">
+                <iframe 
+                  src="https://www.youtube.com/embed/eZHtBzoMgaE" 
+                  title="GitIntel Demo"
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
           <div className="relative">
@@ -231,9 +248,11 @@ export default function LandingPage() {
               Become one of the very first people to try it out
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="px-8">
-                Start for free
-              </Button>
+              <Link href="/sign-in">
+                <Button size="lg" variant="secondary" className="px-8">
+                  Start for free
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
