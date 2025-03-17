@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/process-meeting/**": {
+      "maxDuration": 60
+    }
+  },
   "installCommand": "npm install --legacy-peer-deps",
   "buildCommand": "npm run build"
 }
