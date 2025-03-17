@@ -31,7 +31,7 @@ const items = [
   { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
   { title: "Q&A", url: "/qna", icon: Bot },
   { title: "Meetings", url: "/meetings", icon: Presentation },
-  { title: "Billing", url: "/billing", icon: CreditCard },
+  // { title: "Billing", url: "/billing", icon: CreditCard },
 ];
 
 export function AppSidebar() {

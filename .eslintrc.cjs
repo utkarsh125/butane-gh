@@ -15,8 +15,8 @@ const config = {
   "rules": {
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
-    // "@typescript-eslint/no-unsafe-assignment": ["error", { "ignoreRestArgs": true }],
-    "@typescript-eslint/no-unsafe-assignment": "error",
+    "@typescript-eslint/no-unsafe-assignment": ["error", { "ignoreRestArgs": true }],
+    // "@typescript-eslint/no-unsafe-assignment": "error",
     "@typescript-eslint/consistent-type-imports": [
       "warn",
       {
