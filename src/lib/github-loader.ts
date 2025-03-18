@@ -12,7 +12,7 @@ import { db } from "@/server/db"
 export const loadGithubRepo = async(githubUrl: string, githubToken?: string) =>{
 
     const loader = new GithubRepoLoader(githubUrl, {
-        accessToken: githubToken || '',
+        accessToken: githubToken || process.env.GITHUB_TOKEN || '',
         branch: 'main', //or any branch of that repository
         ignoreFiles: ['package-lock.json','yarn.lock','pnpm-lock.yaml','bun.lock'], //this array contains the files that I can ignore
         recursive: true, //recursively traverse through all files and dirs
