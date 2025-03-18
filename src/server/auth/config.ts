@@ -51,6 +51,7 @@ export const authConfig = {
     signIn: "/sign-in"
   },
   adapter: PrismaAdapter(db),
+  trustHost: true,
   callbacks: {
     session: ({ session, user }) => ({
       ...session,
